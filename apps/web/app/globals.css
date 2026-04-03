@@ -1,0 +1,18 @@
+:root {
+  color-scheme: light;
+}
+
+* {
+  box-sizing: border-box;
+}
+
+body {
+  margin: 0;
+  font-family: Inter, Arial, sans-serif;
+  background: #fafafa;
+  color: #0f172a;
+}
+
+.container {
+  max-width: 960px;
+}
