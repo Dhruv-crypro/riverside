@@ -1,6 +1,4 @@
 /** @type {import('next').NextConfig} */
-const nextConfig = {
-  transpilePackages: ["@riverside/auth", "@riverside/db"]
-};
+const nextConfig = {};
 
 export default nextConfig;
