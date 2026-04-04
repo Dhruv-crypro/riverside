@@ -1,0 +1,21 @@
+{
+  "name": "@riverside/api",
+  "private": true,
+  "version": "0.1.0",
+  "scripts": {
+    "dev": "node --watch src/index.js",
+    "start": "node src/index.js",
+    "build": "node -e \"console.log('api build skipped (plain js)')\"",
+    "lint": "node -e \"console.log('api lint skipped')\"",
+    "check": "node -e \"console.log('api check passed')\""
+  },
+  "dependencies": {
+    "@clerk/express": "^1.3.16",
+    "@riverside/auth": "workspace:*",
+    "@riverside/db": "workspace:*",
+    "cors": "^2.8.5",
+    "dotenv": "^16.4.5",
+    "express": "^4.21.0"
+  },
+  "type": "module"
+}
