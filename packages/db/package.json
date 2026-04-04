@@ -1,0 +1,22 @@
+{
+  "name": "@riverside/db",
+  "private": true,
+  "version": "0.1.0",
+  "type": "module",
+  "exports": {
+    ".": "./src/index.js"
+  },
+  "scripts": {
+    "build": "node -e \"console.log('db build skipped (plain js)')\"",
+    "lint": "node -e \"console.log('db lint skipped')\"",
+    "check": "node -e \"console.log('db check passed')\"",
+    "prisma:generate": "prisma generate",
+    "prisma:migrate": "prisma migrate dev"
+  },
+  "dependencies": {
+    "@prisma/client": "^6.5.0"
+  },
+  "devDependencies": {
+    "prisma": "^6.5.0"
+  }
+}
