@@ -1,22 +1,9 @@
-import Link from "next/link";
 import { ClerkProvider, Show, SignInButton, SignUpButton, UserButton } from "@clerk/nextjs";
 import "./globals.css";
 
 export const metadata = {
-  metadataBase: new URL(process.env.NEXT_PUBLIC_APP_URL || "http://localhost:3000"),
-  title: "Riverside Clone",
-  description: "Premium black-and-gold Riverside-style recording UI with studio, editor, library, and pricing pages.",
-  openGraph: {
-    title: "Riverside Clone",
-    description: "Record, edit, and publish in a premium creator-first interface.",
-    url: "/",
-    siteName: "Riverside Clone"
-  },
-  twitter: {
-    card: "summary_large_image",
-    title: "Riverside Clone",
-    description: "Premium black-and-gold recording workflow UI."
-  }
+  title: "Riverside",
+  description: "Turborepo starter with Next.js, Prisma, and Clerk"
 };
 
 export default function RootLayout({ children }: { children: React.ReactNode }) {
@@ -24,42 +11,18 @@ export default function RootLayout({ children }: { children: React.ReactNode }) 
     <html lang="en">
       <body>
         <ClerkProvider>
-          <div className="shell">
-            <header className="top-nav">
-              <div className="container nav-inner">
-                <Link href="/" className="brand">
-                  Riverside
-                </Link>
-                <div className="cta-row">
-                  <Link href="/dashboard" className="btn ghost">Dashboard</Link>
-                  <Link href="/studio" className="btn ghost">Studio</Link>
-                  <Link href="/recordings" className="btn ghost">Recordings</Link>
-                  <Link href="/pricing" className="btn ghost">Pricing</Link>
-                  <Show when="signed-out">
-                    <SignInButton>
-                      <button className="btn ghost">Sign In</button>
-                    </SignInButton>
-                    <SignUpButton>
-                      <button className="btn primary">Get Started</button>
-                    </SignUpButton>
-                  </Show>
-                  <Show when="signed-in">
-                    <UserButton />
-                  </Show>
-                </div>
-              </div>
-            </header>
-            {children}
-            <footer className="site-footer">
-              <div className="container footer-inner">
-                <span>© {new Date().getFullYear()} Riverside Clone</span>
-                <div className="cta-row">
-                  <Link href="/pricing">Pricing</Link>
-                  <Link href="/dashboard">Dashboard</Link>
-                </div>
-              </div>
-            </footer>
-          </div>
+          <header className="border-b p-4">
+            <nav className="container mx-auto flex items-center justify-end gap-3">
+              <Show when="signed-out">
+                <SignInButton />
+                <SignUpButton />
+              </Show>
+              <Show when="signed-in">
+                <UserButton />
+              </Show>
+            </nav>
+          </header>
+          {children}
         </ClerkProvider>
       </body>
     </html>
